@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Oswald } from 'next/font/google';
+import { Courier_Prime } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--font-oswald',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const courierPrime = Courier_Prime({
+  subsets: ['latin'],
+  variable: '--font-courier-prime',
+  weight: "400"
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,10 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${oswald.variable} ${courierPrime.variable}`}>
+      <body>
         {children}
       </body>
     </html>
