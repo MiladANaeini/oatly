@@ -1,9 +1,29 @@
-"use client";
+// "use client";
+import data from "./data/data.json";
+import Image from "next/image";
+import vaultImage from "../../public/images/NordGen.webp";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      Hello
-    </div>
+    <main>
+      <div className="main-card">
+        <Image src={vaultImage} alt="vault" />
+        <h1 className="heading">
+          {data.title}
+        </h1>
+        <div>
+          By {data.author} . {data.category}
+        </div>
+        <div>
+          {data.publishedAt}
+        </div>
+        <p className="prelude">
+          {data.prelude}
+        </p>
+        <p className="paragraph">
+          {data.paragraphs}
+        </p>
+      </div>
+    </main>
   );
 }
