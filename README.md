@@ -20,7 +20,7 @@ Make sure you have the following installed:
 - npm (JavaScript package manager)
 
 ### Description
-Oatly is a frontend-only blog UI built with Next.js and TypeScript. The layout is styled entirely with custom CSS and fine-tuned using DOM manipulation to achieve precise element positioning. Data is loaded on the homepage using a Promise and displayed dynamically after a loading state.
+Oatly is a frontend-only blog UI built with Next.js and TypeScript. The layout is styled entirely with custom CSS and fine-tuned using DOM manipulation to achieve precise element positioning. Data is loaded on the homepage using a Promise and displayed dynamically after a loading state. The app is fully responsive on mobile and tablets, ensuring a seamless experience across all device sizes.
 
 ### Installation
 
