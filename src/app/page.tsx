@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import vaultImage from "../../public/images/NordGen.webp";
 import { Loading } from "./components/shared/loading";
@@ -10,26 +10,25 @@ export default function Home() {
 
   const [data,setData] = useState<dataType>()
   const [isLoading,setIsLoading] = useState<boolean>(true)
-
+   const titleRef  = useRef<HTMLDivElement>(null)
+    const firstSidebarRef  = useRef<HTMLDivElement>(null)
+    const preludeRef  = useRef<HTMLDivElement>(null)
+    const secondSidebarRef  = useRef<HTMLDivElement>(null)
+    
   const adjustStyles = () => {
     if (!!document) {
-      const titleElement = document.querySelector("#title-element") as HTMLDivElement;
-      const firstSidebarElement = document.querySelector(
-        "#first-sidebar-element"
-      ) as HTMLDivElement;
-      const preludeElement = document.querySelector("#prelude-element") as HTMLDivElement;
-      const secondSidebarElement = document.querySelector(
-        "#second-sidebar-element"
-      ) as HTMLDivElement;
-
+      const titleElement = titleRef.current;
+      const firstSidebarElement = firstSidebarRef.current;
+      const preludeElement = preludeRef.current;
+      const secondSidebarElement = secondSidebarRef.current;
       if(titleElement && firstSidebarElement && preludeElement && secondSidebarElement){
-      firstSidebarElement.style.height = `${firstSidebarElement?.clientHeight +
-       titleElement?.clientHeight + 16}px`;
-      preludeElement.style.height = `${preludeElement?.clientHeight +
-       firstSidebarElement?.clientHeight + 16}px`;
-      secondSidebarElement.style.height = `${
-       (preludeElement?.clientHeight - firstSidebarElement?.clientHeight) +
-      secondSidebarElement?.clientHeight}px`;
+          firstSidebarElement.style.height = `${firstSidebarElement?.clientHeight +
+           titleElement?.clientHeight + 16}px`;
+          preludeElement.style.height = `${preludeElement?.clientHeight +
+           firstSidebarElement?.clientHeight + 16}px`;
+          secondSidebarElement.style.height = `${
+           (preludeElement?.clientHeight - firstSidebarElement?.clientHeight) +
+          secondSidebarElement?.clientHeight}px`;
       }
     }
   }
@@ -58,12 +57,17 @@ export default function Home() {
         <div className="article-container">
         <div className="top-container">
           <div className="sidebar">
-            <div id="first-sidebar-element">
-                <div className="tag">
-                  By {data?.author} · {data?.category} - {data?.publishedAt}
+          <div ref={firstSidebarRef} id="first-sidebar-element" >
+              <div className="meta-container">
+                <div className="meta-info">
+                  By {data?.author} · {data?.category}
+                </div>
+                <div className="meta-info">
+                  {data?.publishedAt}
+                </div>
               </div>
             </div>
-            <div id="second-sidebar-element">
+            <div ref={secondSidebarRef}>
               {data?.paragraphs[0]}
             </div>
             <div>
@@ -71,14 +75,14 @@ export default function Home() {
             </div>
           </div>
           <div className="header">
-            <h1 id="title-element">
+           <h1 ref={titleRef}>
               {data?.title}
             </h1>
-            <div id="prelude-element" className="prelude">
+            <div ref={preludeRef} className="prelude">
               {data?.prelude}
             </div>
             <div className="image-container">
-              <Image src={vaultImage} alt="" />
+              <Image src={vaultImage} alt="vaultImage" />
             </div>
           </div>
         </div>
