@@ -70,9 +70,6 @@ body {
   font-weight: 500;
   line-height: 150px;
   text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 .header .prelude {
