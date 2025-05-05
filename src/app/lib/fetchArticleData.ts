@@ -1,4 +1,4 @@
-import data from "../../../data/data.json";
+import data from "../data/data.json";
 
 export const fetchArticleData = () => {
   return new Promise((resolve, reject) => {

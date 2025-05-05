@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import vaultImage from "../../public/images/NordGen.webp";
 import { Loading } from "./components/shared/loading";
-import { fetchArticleData } from "./components/data/lib/fetchArticleData";
+import { fetchArticleData } from "./lib/fetchArticleData";
 import { dataType } from "./types/globalTypes";
 import { ELEMENT_SPACING } from "@/constants/layoutConstants";
 export default function Home() {
