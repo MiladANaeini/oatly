@@ -16,7 +16,6 @@ export default function Home() {
     const secondSidebarRef  = useRef<HTMLDivElement>(null)
     
   const adjustStyles = () => {
-    if (!!document) {
       const titleElement = titleRef.current;
       const firstSidebarElement = firstSidebarRef.current;
       const preludeElement = preludeRef.current;
@@ -30,7 +29,6 @@ export default function Home() {
            (preludeElement?.clientHeight - firstSidebarElement?.clientHeight) +
           secondSidebarElement?.clientHeight}px`;
       }
-    }
   }
 
   useEffect(() => {
