@@ -5,7 +5,7 @@ import vaultImage from "../../public/images/NordGen.webp";
 import { Loading } from "./components/shared/loading";
 import { fetchArticleData } from "./components/data/lib/fetchArticleData";
 import { dataType } from "./types/globalTypes";
-
+import { ELEMENT_SPACING } from "@/constants/layoutConstants";
 export default function Home() {
 
   const [data,setData] = useState<dataType>()
@@ -22,9 +22,9 @@ export default function Home() {
       const secondSidebarElement = secondSidebarRef.current;
       if(titleElement && firstSidebarElement && preludeElement && secondSidebarElement){
           firstSidebarElement.style.height = `${firstSidebarElement?.clientHeight +
-           titleElement?.clientHeight + 16}px`;
+           titleElement?.clientHeight + ELEMENT_SPACING}px`;
           preludeElement.style.height = `${preludeElement?.clientHeight +
-           firstSidebarElement?.clientHeight + 16}px`;
+           firstSidebarElement?.clientHeight + ELEMENT_SPACING}px`;
           secondSidebarElement.style.height = `${
            (preludeElement?.clientHeight - firstSidebarElement?.clientHeight) +
           secondSidebarElement?.clientHeight}px`;
