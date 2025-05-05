@@ -1,6 +1,6 @@
 # oatly
 
-Welcome to **Oatly** — a lightweight, fast, and modern blogging platform built with **Next.js**, designed with precision using CSS and DOM manipulation for pixel-perfect layout control.
+Welcome to **Oatly** — a lightweight, fast, and modern app built with **Next.js**, designed with precision using CSS and DOM manipulation for pixel-perfect layout control.
 
 ## Frontend Stack
 
@@ -38,4 +38,4 @@ Start the frontend project by running:
    npm run dev
 ```
 
-Access the frontend project in your browser at http://localhost:3000/.
+Access the frontend project in your browser at http://localhost:3000/ and https://oatly-ten.vercel.app/.
