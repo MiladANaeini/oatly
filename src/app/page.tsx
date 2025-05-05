@@ -10,10 +10,10 @@ export default function Home() {
 
   const [data,setData] = useState<dataType>()
   const [isLoading,setIsLoading] = useState<boolean>(true)
-   const titleRef  = useRef<HTMLDivElement>(null)
-    const firstSidebarRef  = useRef<HTMLDivElement>(null)
-    const preludeRef  = useRef<HTMLDivElement>(null)
-    const secondSidebarRef  = useRef<HTMLDivElement>(null)
+  const titleRef  = useRef<HTMLDivElement>(null)
+  const firstSidebarRef  = useRef<HTMLDivElement>(null)
+  const preludeRef  = useRef<HTMLDivElement>(null)
+  const secondSidebarRef  = useRef<HTMLDivElement>(null)
     
   const adjustStyles = () => {
       const titleElement = titleRef.current;
